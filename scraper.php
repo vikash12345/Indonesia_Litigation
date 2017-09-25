@@ -26,7 +26,7 @@
 							$prlink 			=	$element->href
 							
 							
-							  $record = array( 'profilepage' =>$prlink, 'linkofpage' => $link ,'nameofcase' => $nameofcas,'code' => $html_encoded);
+							  $record = array( 'profilepage' =>$prlink, 'linkofpage' => $link ,'nameofcase' => $nameofcase,'code' => $html_encoded);
            scraperwiki::save(array('profilepage','linkofpage','nameofcase','code'), $record); 
 			   }
 				}
