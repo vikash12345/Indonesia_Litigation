@@ -23,7 +23,7 @@
 							
 							$html_encoded 	= 	html_entity_decode($details);
 							$nameofcase 	=	$details->find("b",0)->plaintext;
-							$prlink 			=	$element->href
+							$prlink 			=	$element->href;
 							
 							
 							  $record = array( 'profilepage' =>$prlink, 'linkofpage' => $link ,'nameofcase' => $nameofcase,'code' => $html_encoded);
