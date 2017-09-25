@@ -7,7 +7,7 @@
 //
  for($i = 1; $i < 2; $i++)
 {
-	$link = 'https://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
+	$link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
 	$linkpages = file_get_html($link);
 	if($linkpages)
 	{
