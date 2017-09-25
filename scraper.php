@@ -9,28 +9,30 @@
 {
 	$link = 'https://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
 	$linkpages = file_get_html($link);
+	sleep(20);
 	if($linkpages)
 	{
 		foreach($linkpages->find("//table[@class='tabledata']/tbody/tr/a") as $element)
 		{		
-			if(strpos($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
+			if(strpos($element->href, "//putusan.mahkamahagung.go.id/putusan"))
 			{
 				$linkpages = file_get_html($element->href);
 				foreach($linkpages->find("/html/body/div/div/table/tbody/tr[2]/td/div[1]/div[2]") as $details)
+				
 				{
-					//This is for Case Heading.
-					$caseheading	=	$details->find("b",0)->plaintext;
-					
-					
-					//Checking Nomor
-					$checknomor 	=	$details->find("/table[1]/tbody/tr[1]/td[1]",0)->plaintext;
-					echo $checknomor.'<br/>';
-						
+							
+							$html_encoded 	= 	html_entity_decode($details);
+							$nameofcase 	=	$details->find("b",0)->plaintext;
+							$prlink 			=	$element->href
+							
+							
+							  $record = array( 'profilepage' =>$prlink, 'linkofpage' => $link ,'nameofcase' => $nameofcas,'code' => $html_encoded);
+           scraperwiki::save(array('profilepage','linkofpage','nameofcase','code'), $record); 
+			   }
 				}
 				
 		}	}
 	}
 	  
 }	
-
 ?>
