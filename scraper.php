@@ -9,7 +9,7 @@
 {
 	$link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
 	$linkpages = file_get_html($link);
-	sleep(20);
+	sleep(1000);
 	if($linkpages)
 	{
 		foreach($linkpages->find("//table[@class='tabledata']/tbody/tr/a") as $element)
