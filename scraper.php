@@ -2,7 +2,7 @@
 // This is a template for a PHP scraper on morph.io (https://morph.io)
 // including some code snippets below that you should find helpful
  require 'scraperwiki.php';
- require 'scraperwiki/simple_html_dom.php';
+ require 'simple_html_dom.php';
 //
  $TestURL	=	"https://putusan.mahkamahagung.go.id/putusan/8348c90e77045fecd9b87380232f2119";
 $innerpage	=	file_get_html($TestURL);
