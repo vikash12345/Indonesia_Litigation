@@ -19,7 +19,7 @@ $innerpage	=	file_get_html($TestURL);
 					}
 
 
-	//This is for Tingkat
+					//This is for Tingkat
 					$Tingkat_Proses			=	$innerpage->find("//td[plaintext^=Tingkat Proses]", 0);
 					if($Tingkat_Proses == null || $Tingkat_Proses == "")
 					{
@@ -235,28 +235,28 @@ $innerpage	=	file_get_html($TestURL);
 						$Berkekuatan_Hukum_Tetap	=	$Berkekuatan_Hukum_Tetap->next_sibling();
 					}
 					
-					
-					
-					echo 'This is for Nomor    '. '  = > '.$nomor  .  '<br/>';
-					echo 'This is for Tingkat Proses    '. '  = > '. $Tingkat_Proses  .  '<br/>';
-					echo 'This is for Tanggal Register	    '. '  = > '. $Tanggal_Register  .  '<br/>';
-					echo 'This is for Tahun Register	    '. '  = > '. $Tahun_Register  .  '<br/>';
-					echo 'This is for Jenis Perkara	    '. '  = > '. $Jenis_Perkara  .  '<br/>';
-					echo 'This is for Klasifikasi    '. '  = > '. $Klasifikasi  .  '<br/>';
-					echo 'This is for Sub Klasifikasi	    '. '  = > '. $Sub_Klasifikasi  .  '<br/>';
-					echo 'This is for Jenis Lembaga Peradilan	    '. '  = > '. $Jenis_Lembaga_Peradilan  .  '<br/>';
-					echo 'This is for Lembaga Peradilan	    '. '  = > '. $Lembaga_Peradilan  .  '<br/>';
-					echo 'This is for Para Pihak	    '. '  = > '. $Para_Pihak  .  '<br/>';
-					echo 'This is for Tahun    '. '  = > '. $Tahun  .  '<br/>';
-					echo 'This is for Tanggal Musyawarah	    '. '  = > '. $Tanggal_Musyawarah  .  '<br/>';
-					echo 'This is for Tanggal Dibacakan	    '. '  = > '. $Tanggal_Dibacakan  .  '<br/>';
-					echo 'This is for Amar    '. '  = > '. $Amar  .  '<br/>';
-					echo 'This is for Catatan Amar	    '. '  = > '. $Catatan_Amar  .  '<br/>';
-					echo 'This is for Hakim    '. '  = > '. $Hakim  .  '<br/>';
-					echo 'This is for Hakim Ketua	    '. '  = > '. $Hakim_Ketua  .  '<br/>';
-					echo 'This is for Hakim Anggota	    '. '  = > '. $Hakim_Anggota  .  '<br/>';
-					echo 'This is for Panitera    '. '  = > '. $Panitera  .  '<br/>';
-					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
-					echo '-------------------------------';
+					echo 'This is main page URL '.$link->plaintext.  '<br/>';
+					echo 'This is for URL '. '  = > '.$element->href   ->plaintext.  '<br/>';
+					echo 'This is for Nomor    '. '  = > '.$nomor  ->plaintext.  '<br/>';
+					echo 'This is for Tingkat Proses    '. '  = > '. $Tingkat_Proses  ->plaintext.  '<br/>';
+					echo 'This is for Tanggal Register	    '. '  = > '. $Tanggal_Register  ->plaintext.  '<br/>';
+					echo 'This is for Tahun Register	    '. '  = > '. $Tahun_Register  ->plaintext.  '<br/>';
+					echo 'This is for Jenis Perkara	    '. '  = > '. $Jenis_Perkara  ->plaintext.  '<br/>';
+					echo 'This is for Klasifikasi    '. '  = > '. $Klasifikasi  ->plaintext.  '<br/>';
+					echo 'This is for Sub Klasifikasi	    '. '  = > '. $Sub_Klasifikasi  ->plaintext.  '<br/>';
+					echo 'This is for Jenis Lembaga Peradilan	    '. '  = > '. $Jenis_Lembaga_Peradilan  ->plaintext.  '<br/>';
+					echo 'This is for Lembaga Peradilan	    '. '  = > '. $Lembaga_Peradilan  ->plaintext.  '<br/>';
+					echo 'This is for Para Pihak	    '. '  = > '. $Para_Pihak  ->plaintext.  '<br/>';
+					echo 'This is for Tahun    '. '  = > '. $Tahun  ->plaintext.  '<br/>';
+					echo 'This is for Tanggal Musyawarah	    '. '  = > '. $Tanggal_Musyawarah  ->plaintext.  '<br/>';
+					echo 'This is for Tanggal Dibacakan	    '. '  = > '. $Tanggal_Dibacakan  ->plaintext.  '<br/>';
+					echo 'This is for Amar    '. '  = > '. $Amar  ->plaintext.  '<br/>';
+					echo 'This is for Catatan Amar	    '. '  = > '. $Catatan_Amar  ->plaintext.  '<br/>';
+					echo 'This is for Hakim    '. '  = > '. $Hakim  ->plaintext.  '<br/>';
+					echo 'This is for Hakim Ketua	    '. '  = > '. $Hakim_Ketua  ->plaintext.  '<br/>';
+					echo 'This is for Hakim Anggota	    '. '  = > '. $Hakim_Anggota  ->plaintext.  '<br/>';
+					echo 'This is for Panitera    '. '  = > '. $Panitera  ->plaintext.  '<br/>';
+					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  ->plaintext.  '<br/>';
+					echo '----------------------------------------------------------------------------------------------------'.'<br/>';
 	  
 ?>
