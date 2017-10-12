@@ -5,8 +5,8 @@
  require 'simple_html_dom.php';
 //
  $TestURL	=	"https://putusan.mahkamahagung.go.id/putusan/8348c90e77045fecd9b87380232f2119";
-$innerpage	=	file_get_html($TestURL);
-
+echo $innerpage	=	file_get_html($TestURL);
+/*
 //This is for Nomor
 					$nomor			=	$innerpage->find("//td[plaintext^=Nomor]", 0);
 					if($nomor == null || $nomor == "")
@@ -259,4 +259,6 @@ $innerpage	=	file_get_html($TestURL);
 					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
 					echo '----------------------------------------------------------------------------------------------------'.'<br/>';
 	  
+*/
+
 ?>
