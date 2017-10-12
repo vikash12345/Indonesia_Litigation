@@ -16,7 +16,7 @@
 			{
 				$innerpage	=	file_get_html($element->href);
 				{
-					//This is for Nomor
+					///This is for Nomor
 					$nomor			=	$innerpage->find("//td[plaintext^=Nomor]", 0);
 					if($nomor == null || $nomor == "")
 					{
@@ -245,7 +245,7 @@
 					}
 					
 					
-					
+					echo 'This is for URL '. '  = > '.$element->href   .  '<br/>';
 					echo 'This is for Nomor    '. '  = > '.$nomor  .  '<br/>';
 					echo 'This is for Tingkat Proses    '. '  = > '. $Tingkat_Proses  .  '<br/>';
 					echo 'This is for Tanggal Register	    '. '  = > '. $Tanggal_Register  .  '<br/>';
@@ -266,6 +266,7 @@
 					echo 'This is for Hakim Anggota	    '. '  = > '. $Hakim_Anggota  .  '<br/>';
 					echo 'This is for Panitera    '. '  = > '. $Panitera  .  '<br/>';
 					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
+					echo '----------------------------------------------------------------------------------------------------'.'<br/>';
 					
 				}
 			}
