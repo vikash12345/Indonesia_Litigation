@@ -1,8 +1,8 @@
 <?php
 // This is a template for a PHP scraper on morph.io (https://morph.io)
 // including some code snippets below that you should find helpful
-require 'scraperwiki.php';
-require 'scraperwiki/simple_html_dom.php';
+ require 'scraperwiki.php';
+ require 'scraperwiki/simple_html_dom.php';
 //
  for($i = 1; $i < 2; $i++)
 {
@@ -17,7 +17,18 @@ require 'scraperwiki/simple_html_dom.php';
 				$innerpage	=	file_get_html($element->href);
 				{
 					$Match		=	$innerpage->find("//td[plaintext^=Jenis Perkara]", 0);
-					echo $element->href.' This is link =>  ' .$Match->next_sibling().'<br/>';
+					if($Match != null || $Match != "")
+					{
+						$Match	=	$Match;	
+						if($Match == null || $Match == "")
+					{
+						$Match	=	"Not Available";
+						
+					}
+						echo $element->href.' =>  ' .$Match->next_sibling().'<br/>';	
+					}
+					
+					
 				}
 			}
 		}
