@@ -1,13 +1,23 @@
 <?php
 // This is a template for a PHP scraper on morph.io (https://morph.io)
 // including some code snippets below that you should find helpful
+ //require 'scraperwiki.php';
  require 'scraperwiki.php';
  require 'scraperwiki/simple_html_dom.php';
 //
- $TestURL	=	"https://putusan.mahkamahagung.go.id/putusan/8348c90e77045fecd9b87380232f2119";
-echo $innerpage	=	file_get_html($TestURL);
-/*
-//This is for Nomor
+ for($i = 1; $i < 2; $i++)
+{
+	$link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
+	$pageload 	=	file_get_html($link);
+	if($pageload)
+	{
+		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
+		{								 
+			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
+			{
+				$innerpage	=	file_get_html($element->href);
+				{
+					///This is for Nomor
 					$nomor			=	$innerpage->find("//td[plaintext^=Nomor]", 0);
 					if($nomor == null || $nomor == "")
 					{
@@ -258,7 +268,13 @@ echo $innerpage	=	file_get_html($TestURL);
 					echo 'This is for Panitera    '. '  = > '. $Panitera  .  '<br/>';
 					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
 					echo '----------------------------------------------------------------------------------------------------'.'<br/>';
+					
+					
+				}
+			}
+		}
+	}
+	
+}
 	  
-*/
-
 ?>
