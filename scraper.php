@@ -11,7 +11,7 @@
   for($i = 1; $i < 2; $i++)
 {
 	  
-       $link = scraperwiki::scrape('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
+       $link =	'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
        //$pageload 	=	file_get_html($link);  
        $cHeadres = array(
       'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
