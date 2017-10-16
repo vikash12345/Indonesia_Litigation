@@ -312,8 +312,8 @@ if($pageload)
 					echo 'This is for Panitera    '. '  = > '. $Panitera  .  '<br/>';
 					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
 					echo '----------------------------------------------------------------------------------------------------'.'<br/>';*/
-					$profilelink 				=	urlencode($element->href);
-					echo $nomor		 		=	urlencode($nomor->plaintext);
+					$profilelink 				=	$element->href;
+					$nomor		 			=	urlencode($nomor->plaintext);
 					$Tingkat_Proses				=	urlencode($Tingkat_Proses->plaintext); 
 					$Tanggal_Register			=	urlencode($Tanggal_Register->plaintext); 
 					$Tahun_Register				=	urlencode($Tahun_Register->plaintext); 
@@ -338,11 +338,11 @@ if($pageload)
 						
 							
 							
-			 $record = array( 'num' =>$nomor, 
-		        'caselink' => $link);
+			 $record = array( 'profilelink' =>$profilelink, 
+		        'nomor' => $nomor);
 						
 						
-           scraperwiki::save(array('num','caselink'), $record);				
+           scraperwiki::save(array('profilelink','nomor'), $record);				
 							
 							
 							
