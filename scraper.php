@@ -341,7 +341,7 @@ if($pageload)
 							
 					 $record = array( 'profilelink' =>$profilelink, 
 		        			'nomor' => $nomor,
-			 			'Tingkat_Proses' => $Tingkat_Proses
+			 			'Tingkat_Proses' => $Tingkat_Proses,
 						'Tanggal_Register' => $Tanggal_Register,
 						'Jenis_Perkara' => $Jenis_Perkara,
 						'Klasifikasi' => $Klasifikasi,
