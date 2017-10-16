@@ -68,7 +68,7 @@ if($pageload)
 					}
 					else
 					{
-						$nomor	=	$nomor->next_sibling();
+						$nomor	=	$nomor->next_sibling()->plaintext;
 					}
 
 
@@ -80,7 +80,7 @@ if($pageload)
 					}
 					else
 					{
-						$Tingkat_Proses	=	$Tingkat_Proses->next_sibling();
+						$Tingkat_Proses	=	$Tingkat_Proses->next_sibling()->plaintext;
 					}
 					
 					
