@@ -48,11 +48,12 @@
  }
 
  $pageload = dlPage($MyWebsite);
+	  echo  $pageload;
 if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
 		{	
-			echo $element;
+			
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
 				$innerpage	=	file_get_html($element->href);
@@ -313,27 +314,27 @@ if($pageload)
 					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
 					echo '----------------------------------------------------------------------------------------------------'.'<br/>';*/
 					$profilelink 				=	urlencode($element->href);
-					$nomor		 				=	urlencode($nomor->plaintext);
+					$nomor		 			=	urlencode($nomor->plaintext);
 					$Tingkat_Proses				=	urlencode($Tingkat_Proses->plaintext); 
 					$Tanggal_Register			=	urlencode($Tanggal_Register->plaintext); 
 					$Tahun_Register				=	urlencode($Tahun_Register->plaintext); 
 					$Jenis_Perkara				=	urlencode($Jenis_Perkara->plaintext); 
 					$Klasifikasi				=	urlencode($Klasifikasi->plaintext); 
 					$Sub_Klasifikasi			=	urlencode($Sub_Klasifikasi->plaintext); 
-					$Jenis_Lembaga_Peradilan	=	urlencode($Jenis_Lembaga_Peradilan->plaintext); 
+					$Jenis_Lembaga_Peradilan		=	urlencode($Jenis_Lembaga_Peradilan->plaintext); 
 					$Lembaga_Peradilan			=	urlencode($Lembaga_Peradilan->plaintext); 
-					$Para_Pihak					=	urlencode($Para_Pihak->plaintext); 
-					$Tahun						=	urlencode($Tahun->plaintext); 
+					$Para_Pihak				=	urlencode($Para_Pihak->plaintext); 
+					$Tahun					=	urlencode($Tahun->plaintext); 
 					$Tanggal_Musyawarah			=	urlencode($Tanggal_Musyawarah->plaintext); 
 					$Tanggal_Dibacakan			=	urlencode($Tanggal_Dibacakan->plaintext); 
-					$Amar						=	urlencode($Amar->plaintext); 
+					$Amar					=	urlencode($Amar->plaintext); 
 					$Catatan_Amar				=	urlencode($Catatan_Amar->plaintext); 
-					$Hakim						=	urlencode($Hakim->plaintext); 
+					$Hakim					=	urlencode($Hakim->plaintext); 
 					$Hakim_Ketua				=	urlencode($Hakim_Ketua->plaintext); 
 					$Hakim_Anggota				=	urlencode($Hakim_Anggota->plaintext); 
-					$Panitera					=	urlencode($Panitera->plaintext); 
-					$Berkekuatan_Hukum_Tetap	=	urlencode($Berkekuatan_Hukum_Tetap->plaintext); 
-					echo $profilelink;
+					$Panitera				=	urlencode($Panitera->plaintext); 
+					$Berkekuatan_Hukum_Tetap		=	urlencode($Berkekuatan_Hukum_Tetap->plaintext); 
+					
 				}
 					
 /*
