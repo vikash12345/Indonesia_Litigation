@@ -47,8 +47,7 @@
   }
  }
 
- $pageload = dlPage($MyWebsite);
-	  echo  $pageload;
+ $pageload = dlPage(($MyWebsite);
 if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
@@ -56,7 +55,7 @@ if($pageload)
 			
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				$innerpage	=	file_get_html($element->href);
+				$innerpage	=	dlPage(($element->href);
 				{	
 					if($innerpage)
 					{
