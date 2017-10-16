@@ -335,7 +335,7 @@ if($pageload)
 					$Berkekuatan_Hukum_Tetap		=	urlencode($Berkekuatan_Hukum_Tetap->plaintext); 
 					
 						
-						$nomor
+						
 							
 							
 			 $record = array( 'num' =>$nomor, 
