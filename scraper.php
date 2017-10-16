@@ -16,7 +16,8 @@
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
 				$innerpage	=	file_get_html($element->href);
-				{
+				{	
+					if($innerpage)
 					///This is for Nomor
 					$nomor			=	$innerpage->find("//td[plaintext^=Nomor]", 0);
 					if($nomor == null || $nomor == "")
@@ -291,8 +292,8 @@
 					$Hakim_Anggota				=	urlencode($Hakim_Anggota->plaintext); 
 					$Panitera					=	urlencode($Panitera->plaintext); 
 					$Berkekuatan_Hukum_Tetap	=	urlencode($Berkekuatan_Hukum_Tetap->plaintext); 
-					
 					echo $profilelink;
+				}
 					
 /*
 					$servername = "localhost";
