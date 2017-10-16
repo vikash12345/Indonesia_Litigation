@@ -341,10 +341,29 @@ if($pageload)
 							
 					 $record = array( 'profilelink' =>$profilelink, 
 		        			'nomor' => $nomor,
-			 			'tingkat_proses' => $Tingkat_Proses,);
+			 			'tingkat_proses' => $Tingkat_Proses,
+						'tanggal_register' => $Tanggal_Register,
+						'tahun_register'   => $Tahun_Register,
+						'jenis_perkara' => $Jenis_Perkara,
+						'klasifikasi' => $Klasifikasi,
+						'sub_klasifikasi' => $Sub_Klasifikasi,
+						'jenis_lembaga_peradilan' => $Jenis_Lembaga_Peradilan,
+						'lembaga_peradilan' => $Lembaga_Peradilan,
+						'para_pihak' => $Para_Pihak,
+						'tahun' => $Tahun,
+						'tanggal_musyawarah' => $Tanggal_Musyawarah,
+						'tanggal_dibacakan' => $Tanggal_Dibacakan,
+						'amar' => $Amar,
+						'catatan_amar' => $Catatan_Amar,
+						'hakim' => $Hakim,
+						'hakim_ketua' => $Hakim_Ketua,
+						'hakim_anggota' => $Hakim_Anggota,
+						'panitera' => $Panitera,
+						'berkekuatan_hukum_tetap' => $Berkekuatan_Hukum_Tetap,
+						'mainpage' => $link);
 						
 						
-           scraperwiki::save(array('profilelink','nomor','tingkat_proses'), $record);				
+           scraperwiki::save(array('profilelink','nomor','tingkat_proses','tahun_register','jenis_perkara','jenis_perkara','klasifikasi','sub_klasifikasi','jenis_lembaga_peradilan','lembaga_peradilan','para_pihak','tahun','tanggal_musyawarah','tanggal_dibacakan','amar','catatan_amar','hakim','hakim_ketua','hakim_anggota','panitera','berkekuatan_hukum_tetap','mainpage'), $record);				
 							
 							
 							
