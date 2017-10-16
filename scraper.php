@@ -5,7 +5,7 @@
  require 'scraperwiki.php';
  require 'scraperwiki/simple_html_dom.php';
 //
- for($i = 1; $i < 2; $i++)
+  for($i = 11; $i < 46866; $i++)
 {
 	$link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
 	$pageload 	=	file_get_html($link);
@@ -245,7 +245,9 @@
 						$Berkekuatan_Hukum_Tetap	=	$Berkekuatan_Hukum_Tetap->next_sibling();
 					}
 					
-					echo 'This is main page URL '.$link.  '<br/>';
+					//echo 'This is main page URL '.$link.  '<br/>';
+					
+					/*
 					echo 'This is for URL '. '  = > '.$element->href   .  '<br/>';
 					echo 'This is for Nomor    '. '  = > '.$nomor  .  '<br/>';
 					echo 'This is for Tingkat Proses    '. '  = > '. $Tingkat_Proses  .  '<br/>';
@@ -267,9 +269,57 @@
 					echo 'This is for Hakim Anggota	    '. '  = > '. $Hakim_Anggota  .  '<br/>';
 					echo 'This is for Panitera    '. '  = > '. $Panitera  .  '<br/>';
 					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
-					echo '----------------------------------------------------------------------------------------------------'.'<br/>';
+					echo '----------------------------------------------------------------------------------------------------'.'<br/>';*/
+					$profilelink 				=	urlencode($element->href);
+					$nomor		 				=	urlencode($nomor->plaintext);
+					$Tingkat_Proses				=	urlencode($Tingkat_Proses->plaintext); 
+					$Tanggal_Register			=	urlencode($Tanggal_Register->plaintext); 
+					$Tahun_Register				=	urlencode($Tahun_Register->plaintext); 
+					$Jenis_Perkara				=	urlencode($Jenis_Perkara->plaintext); 
+					$Klasifikasi				=	urlencode($Klasifikasi->plaintext); 
+					$Sub_Klasifikasi			=	urlencode($Sub_Klasifikasi->plaintext); 
+					$Jenis_Lembaga_Peradilan	=	urlencode($Jenis_Lembaga_Peradilan->plaintext); 
+					$Lembaga_Peradilan			=	urlencode($Lembaga_Peradilan->plaintext); 
+					$Para_Pihak					=	urlencode($Para_Pihak->plaintext); 
+					$Tahun						=	urlencode($Tahun->plaintext); 
+					$Tanggal_Musyawarah			=	urlencode($Tanggal_Musyawarah->plaintext); 
+					$Tanggal_Dibacakan			=	urlencode($Tanggal_Dibacakan->plaintext); 
+					$Amar						=	urlencode($Amar->plaintext); 
+					$Catatan_Amar				=	urlencode($Catatan_Amar->plaintext); 
+					$Hakim						=	urlencode($Hakim->plaintext); 
+					$Hakim_Ketua				=	urlencode($Hakim_Ketua->plaintext); 
+					$Hakim_Anggota				=	urlencode($Hakim_Anggota->plaintext); 
+					$Panitera					=	urlencode($Panitera->plaintext); 
+					$Berkekuatan_Hukum_Tetap	=	urlencode($Berkekuatan_Hukum_Tetap->plaintext); 
 					
+					echo $profilelink;
 					
+/*
+					$servername = "localhost";
+					$username = "root";
+					$password = "";
+					$dbname = "pustus";
+
+					// Create connection
+					$conn = new mysqli($servername, $username, $password, $dbname);
+					// Check connection
+					if ($conn->connect_error) {
+						die("Connection failed: " . $conn->connect_error);
+					} 
+
+					 $sql = "INSERT INTO indonesia_litigation (PageURL, nomor, Tingkat_Proses,Tanggal_Register,Tahun_Register,Jenis_Perkara,Klasifikasi,Sub_Klasifikasi,Jenis_Lembaga_Peradilan,Lembaga_Peradilan,Para_Pihak,Tahun,Tanggal_Musyawarah,Tanggal_Dibacakan,Amar,Catatan_Amar,Hakim,Hakim_Ketua,Hakim_Anggota,Panitera,Berkekuatan_Hukum_Tetap,Innerpage)
+					
+					VALUES ('$profilelink', '$nomor', '$Tingkat_Proses','$Tanggal_Register','$Tahun_Register','$Jenis_Perkara','$Klasifikasi','$Sub_Klasifikasi','$Jenis_Lembaga_Peradilan','$Lembaga_Peradilan','$Para_Pihak','$Tahun','$Tanggal_Musyawarah','$Tanggal_Dibacakan','$Amar','$Catatan_Amar','$Hakim','$Hakim_Ketua','$Hakim_Anggota','$Panitera','$Berkekuatan_Hukum_Tetap','$link')";
+					
+
+					if ($conn->query($sql) === TRUE) {
+						echo $link.'<br/>';
+					} else {
+						echo "Error: " . $sql . "<br>" . $conn->error;
+					}
+
+					$conn->close();
+					*/
 				}
 			}
 		}
