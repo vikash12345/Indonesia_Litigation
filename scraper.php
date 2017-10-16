@@ -11,15 +11,9 @@
   for($i = 1; $i < 2; $i++)
 {
 	  
-		 $ctx = stream_context_create(['ssl' => [
-   		 'capture_session_meta' => TRUE
-		]]);
- 
-//$html = file_get_contents('https://google.com/');
-	$meta = stream_context_get_options($ctx)['ssl']['session_meta'];
-	$link = scraperwiki::scrape('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html', FALSE, $ctx);
-	$pageload = new simple_html_dom();
-	$pageload->load($link);
+	
+	$link = scraperwiki::scrape('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
+	
 //
 // // Read in a page
 // $html = scraperwiki::scrape("http://foo.com");
@@ -30,7 +24,8 @@
 
 // 
 	  
-	//$pageload 	=	file_get_html($link);
+	$pageload 	=	file_get_html($link);
+	echo $pageload;
 	  
 	  
 	  
