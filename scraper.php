@@ -8,7 +8,7 @@
 
 
 
-  for($i = 1; $i < 2; $i++)
+  for($i = 1; $i < 46875; $i++)
 {
 	  
        $link =	'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
@@ -46,7 +46,7 @@
    return $dom;
   }
  }
-
+echo "$link\n";	
  $pageload = dlPage($MyWebsite);
 if($pageload)
 	{
@@ -59,7 +59,7 @@ if($pageload)
 				{	
 					if($innerpage)
 					{
-					echo "$link\n";	
+					
 					///This is for Nomor
 					$nomor			=	$innerpage->find("//td[plaintext^=Nomor]", 0);
 					if($nomor == null || $nomor == "")
