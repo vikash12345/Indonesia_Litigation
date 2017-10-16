@@ -313,7 +313,7 @@ if($pageload)
 					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
 					echo '----------------------------------------------------------------------------------------------------'.'<br/>';*/
 					$profilelink 				=	urlencode($element->href);
-					echo $nomor		 			=	urlencode($nomor->plaintext);
+					echo $nomor		 		=	urlencode($nomor->plaintext);
 					$Tingkat_Proses				=	urlencode($Tingkat_Proses->plaintext); 
 					$Tanggal_Register			=	urlencode($Tanggal_Register->plaintext); 
 					$Tahun_Register				=	urlencode($Tahun_Register->plaintext); 
@@ -334,6 +334,18 @@ if($pageload)
 					$Panitera				=	urlencode($Panitera->plaintext); 
 					$Berkekuatan_Hukum_Tetap		=	urlencode($Berkekuatan_Hukum_Tetap->plaintext); 
 					
+						
+						$nomor
+							
+							
+			 $record = array( 'num' =>$nomor, 
+		        'caselink' => $link);
+						
+						
+           scraperwiki::save(array('num','caselink'), $record);				
+							
+							
+							
 				}
 					
 /*
