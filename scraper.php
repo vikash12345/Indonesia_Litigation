@@ -18,6 +18,7 @@
 				$innerpage	=	file_get_html($element->href);
 				{	
 					if($innerpage)
+					{
 					///This is for Nomor
 					$nomor			=	$innerpage->find("//td[plaintext^=Nomor]", 0);
 					if($nomor == null || $nomor == "")
