@@ -47,7 +47,7 @@
   }
  }
 
- $pageload = dlPage(($MyWebsite);
+ $pageload = dlPage($MyWebsite);
 if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
