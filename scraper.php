@@ -10,7 +10,14 @@
 
   for($i = 1; $i < 2; $i++)
 {
-	$link = scraperwiki::scrape('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
+	  
+		 $ctx = stream_context_create(['ssl' => [
+   		 'capture_session_meta' => TRUE
+		]]);
+ 
+//$html = file_get_contents('https://google.com/');
+	$meta = stream_context_get_options($ctx)['ssl']['session_meta'];
+	$link = scraperwiki::scrape('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html', FALSE, $ctx);
 	$pageload = new simple_html_dom();
 	$pageload->load($link);
 //
@@ -34,7 +41,7 @@
 		{								 
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				$innerpage	=	file_get_html($element->href);
+				$innerpage	=	file_get_html('$element->href', FALSE, $ctx);
 				{	
 					if($innerpage)
 					{
