@@ -68,7 +68,7 @@ if($pageload)
 					}
 					else
 					{
-						$nomor	=	$nomor->next_sibling()->plaintext;
+						$nomor	=	$nomor->next_sibling();
 					}
 
 
@@ -80,7 +80,7 @@ if($pageload)
 					}
 					else
 					{
-						$Tingkat_Proses	=	$Tingkat_Proses->next_sibling()->plaintext;
+						$Tingkat_Proses	=	$Tingkat_Proses->next_sibling();
 					}
 					
 					
@@ -341,10 +341,10 @@ if($pageload)
 							
 					 $record = array( 'profilelink' =>$profilelink, 
 		        			'nomor' => $nomor,
-			 			'Tingkat_Proses' => $Tingkat_Proses,);
+			 			'tingkat_proses' => $Tingkat_Proses,);
 						
 						
-           scraperwiki::save(array('profilelink','nomor','Tingkat_Proses'), $record);				
+           scraperwiki::save(array('profilelink','nomor','tingkat_proses'), $record);				
 							
 							
 							
