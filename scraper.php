@@ -52,13 +52,14 @@ if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
 		{	
-			echo "$link\n";
+			
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
 				$innerpage	=	dlPage($element->href);
 				{	
 					if($innerpage)
 					{
+					echo "$link\n";	
 					///This is for Nomor
 					$nomor			=	$innerpage->find("//td[plaintext^=Nomor]", 0);
 					if($nomor == null || $nomor == "")
@@ -338,11 +339,31 @@ if($pageload)
 						
 							
 							
-			 $record = array( 'profilelink' =>$profilelink, 
-		        'nomor' => $nomor);
+					 $record = array( 'profilelink' =>$profilelink, 
+		        			'nomor' => $nomor,
+			 			'Tingkat_Proses' => $Tingkat_Proses
+						'Tanggal_Register' => $Tanggal_Register,
+						'Tahun_Register' => $Tahun_Register,
+						'Jenis_Perkara' => $Jenis_Perkara,
+						'Klasifikasi' => $Klasifikasi,
+						'Sub_Klasifikasi' => $Sub_Klasifikasi,
+						'Jenis_Lembaga_Peradilan' => $Jenis_Lembaga_Peradilan,
+						'Lembaga_Peradilan' => $Lembaga_Peradilan,
+						'Para_Pihak' => $Para_Pihak,
+						'Tahun' => $Tahun,
+						'Tanggal_Musyawarah' => $Tanggal_Musyawarah,
+						'Tanggal_Dibacakan' => $Tanggal_Dibacakan,
+						'Amar' => $Amar,
+						'Catatan_Amar' => $Catatan_Amar,
+						'Hakim' => $Hakim,
+						'Hakim_Ketua' => $Hakim_Ketua,
+						'Hakim_Anggota' => $Hakim_Anggota,
+						'Panitera' => $Panitera,
+						'Berkekuatan_Hukum_Tetap' => $Berkekuatan_Hukum_Tetap,
+						'mainpage' => $link);
 						
 						
-           scraperwiki::save(array('profilelink','nomor'), $record);				
+           scraperwiki::save(array('profilelink','nomor','Tingkat_Proses','Tahun_Register','Jenis_Perkara','Jenis_Perkara','Klasifikasi','Sub_Klasifikasi','Jenis_Lembaga_Peradilan','Lembaga_Peradilan','Para_Pihak','Tahun','Tanggal_Musyawarah','Tanggal_Dibacakan','Amar','Catatan_Amar','Hakim','Hakim_Ketua','Hakim_Anggota','Panitera','Berkekuatan_Hukum_Tetap','mainpage'), $record);				
 							
 							
 							
