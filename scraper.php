@@ -41,7 +41,7 @@
 		{								 
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				$innerpage	=	file_get_html('$element->href', FALSE, $ctx);
+				$innerpage	=	file_get_html($element->href);
 				{	
 					if($innerpage)
 					{
