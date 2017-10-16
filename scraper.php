@@ -5,10 +5,29 @@
  require 'scraperwiki.php';
  require 'scraperwiki/simple_html_dom.php';
 //
+
+
+
   for($i = 1; $i < 2; $i++)
 {
-	$link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
-	$pageload 	=	file_get_html($link);
+	$link = scraperwiki::scrape('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
+	$pageload = new simple_html_dom();
+	$pageload->load($link);
+//
+// // Read in a page
+// $html = scraperwiki::scrape("http://foo.com");
+//
+// // Find something on the page using css selectors
+// $dom = new simple_html_dom();
+// $dom->load($html);
+
+// 
+	  
+	//$pageload 	=	file_get_html($link);
+	  
+	  
+	  
+	  
 	if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
