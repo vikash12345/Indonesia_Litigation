@@ -13,19 +13,8 @@
 	  
 	
 	$link = scraperwiki::scrape('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
-	
-//
-// // Read in a page
-// $html = scraperwiki::scrape("http://foo.com");
-//
-// // Find something on the page using css selectors
-// $dom = new simple_html_dom();
-// $dom->load($html);
-
-// 
-	  
 	$pageload 	=	file_get_html($link);
-	echo $pageload;
+	//echo $pageload;
 	  
 	  
 	  
@@ -33,7 +22,8 @@
 	if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
-		{								 
+		{	
+			echo $element;
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
 				$innerpage	=	file_get_html($element->href);
