@@ -343,7 +343,6 @@ if($pageload)
 		        			'nomor' => $nomor,
 			 			'Tingkat_Proses' => $Tingkat_Proses
 						'Tanggal_Register' => $Tanggal_Register,
-						'Tahun_Register' => $Tahun_Register,
 						'Jenis_Perkara' => $Jenis_Perkara,
 						'Klasifikasi' => $Klasifikasi,
 						'Sub_Klasifikasi' => $Sub_Klasifikasi,
