@@ -5,7 +5,7 @@
  require 'scraperwiki.php';
  require 'scraperwiki/simple_html_dom.php';
 //
-  for($i = 11; $i < 46866; $i++)
+  for($i = 1; $i < 2; $i++)
 {
 	$link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
 	$pageload 	=	file_get_html($link);
