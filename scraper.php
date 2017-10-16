@@ -8,14 +8,14 @@
   for($i = 1; $i < 2; $i++)
 {
 	$link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
-	$pageload 	=	file_get_contents($link);
+	$pageload 	=	file_get_content($link);
 	if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
 		{								 
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				$innerpage	=	file_get_contents($element->href);
+				$innerpage	=	file_get_content($element->href);
 				{	
 					if($innerpage)
 					{
