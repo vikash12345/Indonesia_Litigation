@@ -55,14 +55,7 @@ $pageload = dlPage($MyWebsite);
 			
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-	$cHeadres = array(
-      'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Language: en-US,en;q=0.5',
-      'Connection: Keep-Alive',
-      'Pragma: no-cache',
-      'Cache-Control: no-cache'
-     );
-
+	
  //$MyWebsite = $element->href;
 
  function linkpage($href) {
