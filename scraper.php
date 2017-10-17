@@ -19,7 +19,7 @@
       'Cache-Control: no-cache'
      );
 
- $MyWebsite =  'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
+// $MyWebsite =  
 
  function dlPage($href) {
   global $cHeadres;
@@ -45,7 +45,7 @@
   }
  }
 
-$pageload = dlPage($MyWebsite);
+$pageload = dlPage('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';);
 	  
 	  
  if($pageload)
@@ -56,36 +56,7 @@ $pageload = dlPage($MyWebsite);
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
 	
- //$MyWebsite = $element->href;
-
- function linkpage($href) {
-  global $cHeadres;
-
-  $ch = curl_init();
-  if($ch){
-   curl_setopt($ch, CURLOPT_URL, $href);
-   curl_setopt($ch, CURLOPT_HTTPHEADER, $cHeadres);
-   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-   curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt');
-   curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookies.txt');
-   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-   curl_setopt($ch, CURLOPT_HEADER, false);
-   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-   curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-   $str = curl_exec($ch);
-   curl_close($ch);
-
-   $dom = new simple_html_dom();
-   $dom->load($str);
-   return $dom;
-  }
- }
-
-$innerpage = linkpage($element->href);
-				
-				
-				//$innerpage	=	file_get_contents($element->href);
+				$innerpage = dlPage($element->href);
 				{	
 					if($innerpage)
 					{
