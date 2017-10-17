@@ -396,11 +396,11 @@ if($pageload)
 					$conn->close();
 					*/
 				}
-				$innerpage->clear();
+				
 			}
 		}
 	}
-	  $pageload->clear();
+	 
 	
 }
    
