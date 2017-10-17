@@ -10,44 +10,52 @@
 //46875
   for($i = 1; $i < 3; $i++)
 {
-	  
-      
-       //$pageload 	=	file_get_html($link);  
-       $cHeadres = array(
-      'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Language: en-US,en;q=0.5',
-      'Connection: Keep-Alive',
-      'Pragma: no-cache',
-      'Cache-Control: no-cache'
-     );
+function dlPage($href, $already_loaded = array()) {
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($curl, CURLOPT_HEADER, false);
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($curl, CURLOPT_URL, $href);
+    curl_setopt($curl, CURLOPT_REFERER, $href);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4");
+    $htmlPage = curl_exec($curl);
+    curl_close($curl);
 
- //$MyWebsite =  ;
+    echo "Loading From URL:" . $href . "<br/>\n";
+    $already_loaded[$href] = true;
 
- function dlPage($href) {
-  global $cHeadres;
+    // Create a DOM object
+    $dom = file_get_html($href);
+    // Load HTML from a string
+    $dom->load($htmlPage);
 
-  $ch = curl_init();
-  if($ch){
-   curl_setopt($ch, CURLOPT_URL, $href);
-   curl_setopt($ch, CURLOPT_HTTPHEADER, $cHeadres);
-   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-   curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt');
-   curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookies.txt');
-   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-   curl_setopt($ch, CURLOPT_HEADER, false);
-   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-   curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-   $str = curl_exec($ch);
-   curl_close($ch);
+    $next_page_url = null;
+    $items = $dom->find('ul[class="osh-pagination"] li[class="item"] a[title="Next"]');
 
-   $dom = new simple_html_dom();
-   $dom->load($str);
-   return $dom;
-  }
- }
+    foreach ($items as $item) {
+        $link = htmlspecialchars_decode($item->href);
+        if (!isset($already_loaded[$link])) {
+            $next_page_url = $link;
+            break;
+        }
+    }
 
- $pageload = dlPage('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
+    if ($next_page_url !== null) {
+        $dom->clear();
+        unset($dom);
+
+        //load the next page from the pagination to collect the next link
+        return dlPage($next_page_url, $already_loaded);
+    }
+
+    return $href;
+}
+
+$url = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
+$pageload = dlPage($url);
+
+ //$pageload = dlPage();
 if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
