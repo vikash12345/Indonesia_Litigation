@@ -5,13 +5,57 @@
  require 'scraperwiki.php';
  require 'scraperwiki/simple_html_dom.php';
 //
+function dlPage($href, $already_loaded = array()) {
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($curl, CURLOPT_HEADER, false);
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($curl, CURLOPT_URL, $href);
+    curl_setopt($curl, CURLOPT_REFERER, $href);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4");
+    $htmlPage = curl_exec($curl);
+    curl_close($curl);
 
+    echo "Loading From URL:" . $href . "<br/>\n";
+    $already_loaded[$href] = true;
+
+    // Create a DOM object
+    $dom = file_get_html($href);
+    // Load HTML from a string
+    $dom->load($htmlPage);
+
+    $next_page_url = null;
+    $items = $dom->find('ul[class="osh-pagination"] li[class="item"] a[title="Next"]');
+
+    foreach ($items as $item) {
+        $link = htmlspecialchars_decode($item->href);
+        if (!isset($already_loaded[$link])) {
+            $next_page_url = $link;
+            break;
+        }
+    }
+
+    if ($next_page_url !== null) {
+        $dom->clear();
+        unset($dom);
+
+        //load the next page from the pagination to collect the next link
+        return dlPage($next_page_url, $already_loaded);
+    }
+
+    return $href;
+}
+
+
+//echo "DATA:" . $data . "\n";
 
 //46875
   for($i = 1; $i < 3; $i++)
 {
-$link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
-$pageload 	=	file_get_html($link);	  
+  
+$url = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
+$pageload = dlPage($url);
 if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
@@ -19,7 +63,7 @@ if($pageload)
 			
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				$innerpage	=	file_get_html($element->href);
+				$innerpage	=	dlPage($element->href);
 				{	
 					if($innerpage)
 					{
