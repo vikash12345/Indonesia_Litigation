@@ -45,7 +45,7 @@
   }
  }
 
-$pageload = dlPage('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';);
+$pageload = dlPage('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
 	  
 	  
  if($pageload)
