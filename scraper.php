@@ -7,8 +7,8 @@
 //
 
 
-
-  for($i = 1; $i < 46875; $i++)
+//46875
+  for($i = 1; $i < 3; $i++)
 {
 	  
        $link =	'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
@@ -46,7 +46,7 @@
    return $dom;
   }
  }
-echo "$link\n";	
+
  $pageload = dlPage($MyWebsite);
 if($pageload)
 	{
@@ -399,6 +399,7 @@ if($pageload)
 			}
 		}
 	}
+	  $pageload->clear()
 	
 }
    
