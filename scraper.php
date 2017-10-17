@@ -399,7 +399,7 @@ if($pageload)
 			}
 		}
 	}
-	  $pageload->clear()
+	  $pageload->clear();
 	
 }
    
