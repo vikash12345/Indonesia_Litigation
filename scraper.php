@@ -17,7 +17,7 @@ function dlPage($href, $already_loaded = array()) {
     $htmlPage = curl_exec($curl);
     curl_close($curl);
 
-    echo "Loading From URL:" . $href . "<br/>\n";
+   // echo "Loading From URL:" . $href . "<br/>\n";
     $already_loaded[$href] = true;
 
     // Create a DOM object
