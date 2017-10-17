@@ -55,7 +55,7 @@ if($pageload)
 			
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				$innerpage	=	file_get_html($element->href);
+				$innerpage	=	dlPage($element->href);
 				{	
 					if($innerpage)
 					{
@@ -396,6 +396,7 @@ if($pageload)
 					$conn->close();
 					*/
 				}
+				$innerpage->clear();
 			}
 		}
 	}
