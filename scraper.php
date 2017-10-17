@@ -11,7 +11,7 @@
   for($i = 1; $i < 3; $i++)
 {
 	  
-       $link =	'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
+      
        //$pageload 	=	file_get_html($link);  
        $cHeadres = array(
       'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -21,7 +21,7 @@
       'Cache-Control: no-cache'
      );
 
- $MyWebsite = $link;
+ //$MyWebsite =  ;
 
  function dlPage($href) {
   global $cHeadres;
@@ -47,7 +47,7 @@
   }
  }
 
- $pageload = dlPage($MyWebsite);
+ $pageload = dlPage('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
 if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
