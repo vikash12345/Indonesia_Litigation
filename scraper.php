@@ -3,7 +3,7 @@
 // including some code snippets below that you should find helpful
  //require 'scraperwiki.php';
  require 'scraperwiki.php';
- require 'scraperwiki/simple_html_dom.php';
+ require 'simple_html_dom.php';
 //
 
 
