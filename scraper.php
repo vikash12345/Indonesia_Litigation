@@ -4,7 +4,8 @@
  //require 'scraperwiki.php';
  require 'scraperwiki.php';
  require 'simple_html_dom.php';
-//
+error_reporting(0);
+
 
 
 //46875
