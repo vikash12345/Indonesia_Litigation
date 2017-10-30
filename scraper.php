@@ -38,7 +38,7 @@
 for($page = 1; $page <2; $page++)
 {
     
- $link = 'https://e.fbr.gov.pk/Registration/searchDetail.aspx?crup='.$page;
+ $link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
 	$pageload = dlPage($link);
 	  
 	  
