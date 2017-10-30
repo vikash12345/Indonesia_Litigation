@@ -2,8 +2,8 @@
 // This is a template for a PHP scraper on morph.io (https://morph.io)
 // including some code snippets below that you should find helpful
  //require 'scraperwiki.php';
-//require 'scraperwiki.php';
-require 'scraperwiki/simple_html_dom.php';
+require 'scraperwiki.php';
+//require 'scraperwiki/simple_html_dom.php';
 require 'simple_html_dom.php';
  $cHeadres = array(
       'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -12,8 +12,6 @@ require 'simple_html_dom.php';
       'Pragma: no-cache',
       'Cache-Control: no-cache'
      );
-
-
      function dlPage($link) {
         global $cHeadres;
         $ch = curl_init();
