@@ -38,7 +38,7 @@
 for($page = 1; $page <2; $page++)
 {
     
- $link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
+ $link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
 	$pageload = dlPage($link);
 	  echo $pageload;
 	 /* 
