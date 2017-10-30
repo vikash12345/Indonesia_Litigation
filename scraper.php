@@ -4,15 +4,7 @@
  //require 'scraperwiki.php';
  require 'scraperwiki.php';
  require 'simple_html_dom.php';
-error_reporting(0);
-
-
-
-//46875
-  for($i = 1; $i < 4; $i++)
-{
-	//  $pageload 
-	$cHeadres = array(
+ $cHeadres = array(
       'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language: en-US,en;q=0.5',
       'Connection: Keep-Alive',
@@ -20,33 +12,33 @@ error_reporting(0);
       'Cache-Control: no-cache'
      );
 
-// $MyWebsite =  
 
- function dlPage($href) {
-  global $cHeadres;
-
-  $ch = curl_init();
-  if($ch){
-   curl_setopt($ch, CURLOPT_URL, $href);
-   curl_setopt($ch, CURLOPT_HTTPHEADER, $cHeadres);
-   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-   curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt');
-   curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookies.txt');
-   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-   curl_setopt($ch, CURLOPT_HEADER, false);
-   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-   curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-   $str = curl_exec($ch);
-   curl_close($ch);
-
-   $dom = new simple_html_dom();
-   $dom->load($str);
-   return $dom;
-  }
- }
-
-$pageload = dlPage('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html');
+     function dlPage($link) {
+        global $cHeadres;
+        $ch = curl_init();
+        if($ch){
+         curl_setopt($ch, CURLOPT_URL, $link);
+         curl_setopt($ch, CURLOPT_HTTPHEADER, $cHeadres);
+         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+         curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt');
+         curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookies.txt');
+         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+         curl_setopt($ch, CURLOPT_HEADER, false);
+         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+         curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+         $str = curl_exec($ch);
+         curl_close($ch);
+         $dom = new simple_html_dom();
+         $dom->load($str);
+         return $dom;
+        }
+       }
+//46875
+  for($i = 1; $i < 3; $i++)
+{
+	 $link = 'https://e.fbr.gov.pk/Registration/searchDetail.aspx?crup='.$i;
+	$pageload = dlPage($link);
 	  
 	  
  if($pageload)
@@ -414,6 +406,10 @@ $pageload = dlPage('http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.ht
 	
 	//echo $pageload;
 	  
+ 
+ }
+
+
 	  
 	  
 	  
