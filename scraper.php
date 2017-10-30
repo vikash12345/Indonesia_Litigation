@@ -38,7 +38,7 @@
 for($page = 1; $page <2; $page++)
 {
     
-	echo $page
+	echo $page;
 	//$pageload = dlPage('http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html');
 	 // echo $pageload;
 	 /* 
