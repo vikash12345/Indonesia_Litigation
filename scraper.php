@@ -19,7 +19,7 @@ require 'scraperwiki/simple_html_dom.php';
         if($ch){
          curl_setopt($ch, CURLOPT_URL, $link);
          curl_setopt($ch, CURLOPT_HTTPHEADER, $cHeadres);
-         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
          curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt');
          curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookies.txt');
@@ -38,10 +38,10 @@ require 'scraperwiki/simple_html_dom.php';
 for($page = 1; $page <2; $page++)
 {
     	$linkcreate	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
-	echo $linkcreate;
 	$pageload = dlPage($linkcreate);
+	if($pageload){
 	echo $pageload;
-	
+	}
 }
    
 	
