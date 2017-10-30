@@ -35,7 +35,7 @@
         }
        }
        
-for($page = 1; $page <3; $page++)
+for($page = 1; $page <2; $page++)
 {
     
  $link = 'https://e.fbr.gov.pk/Registration/searchDetail.aspx?crup='.$page;
@@ -46,7 +46,7 @@ for($page = 1; $page <3; $page++)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
 		{	
-			
+			echo $element;
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
 	
