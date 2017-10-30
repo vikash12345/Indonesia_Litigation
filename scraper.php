@@ -3,7 +3,7 @@
 // including some code snippets below that you should find helpful
  //require 'scraperwiki.php';
  require 'scraperwiki.php';
- require 'scraperwiki/simple_html_dom.php';
+ require 'simple_html_dom.php';
  $cHeadres = array(
       'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language: en-US,en;q=0.5',
