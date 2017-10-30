@@ -7,7 +7,7 @@ require 'scraperwiki/simple_html_dom.php';
 for($page = 1; $page <2; $page++)
 {
     	$linkcreate	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
-	$pageload = file_get_html($linkcreate);
+	$pageload = file_get_contents($linkcreate);
 	if($pageload)
 	{
 	echo $pageload;
