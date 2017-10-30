@@ -40,13 +40,13 @@ for($page = 1; $page <2; $page++)
     
  $link = 'http://putusan.mahkamahagung.go.id/direktori/index-'.$i.'.html';
 	$pageload = dlPage($link);
-	  
-	  
+	  echo $pageload;
+	 /* 
  if($pageload)
 	{
 		foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
 		{	
-			echo $element;
+			
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
 	
@@ -308,7 +308,7 @@ for($page = 1; $page <2; $page++)
 					echo 'This is for Panitera    '. '  = > '. $Panitera  .  '<br/>';
 					echo 'This is for Berkekuatan Hukum Tetap	    '. '  = > '. $Berkekuatan_Hukum_Tetap  .  '<br/>';
 					echo '----------------------------------------------------------------------------------------------------'.'<br/>';*/
-					$profilelink 				=	$element->href;
+					/*$profilelink 				=	$element->href;
 					$nomor		 			=	urlencode($nomor->plaintext);
 					$Tingkat_Proses				=	urlencode($Tingkat_Proses->plaintext); 
 					$Tanggal_Register			=	urlencode($Tanggal_Register->plaintext); 
@@ -389,12 +389,14 @@ for($page = 1; $page <2; $page++)
 					}
 
 					$conn->close();
-					*/
+					
 				}
 				
 			}
 		}
 	}
+*/
+
 	 
 	
 }
