@@ -37,9 +37,9 @@ $cHeadres = array(
        
 for($page = 1; $page <3; $page++)
 {
-    	$linkcreate	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
-	$pageload = dlPage($linkcreate);
-	echo $pageload->plaintext;
+    	$link	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
+	$pageload = dlPage($link);
+	echo $pageload;
 }
    
 	
