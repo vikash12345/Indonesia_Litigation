@@ -45,7 +45,7 @@ for($page = 1; $page <3; $page++)
 		{								 
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				echo $element->href;
+				echo "$element->href \n";
 				//$innerpage	=	dlPage($element->href);
 		}	}	
 	}
