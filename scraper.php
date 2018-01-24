@@ -39,7 +39,16 @@ for($page = 1; $page <3; $page++)
 {
     	$link	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
 	$pageload = dlPage($link);
-	echo $pageload;
+	if($pageload)
+	{
+	foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
+		{								 
+			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
+			{
+				echo $element->href;
+				//$innerpage	=	dlPage($element->href);
+		}	}	
+	}
 }
    
 	
