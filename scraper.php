@@ -38,6 +38,7 @@ $cHeadres = array(
 for($page = 1; $page <49434; $page++)
 {
     	$link	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
+	echo "$link\n";
 	$pageload = dlPage($link);
 	if($pageload)
 	{
@@ -46,7 +47,7 @@ for($page = 1; $page <49434; $page++)
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
 				$innerpage	=	dlPage($element->href);
-					echo "$innerpage\n";
+					
 					sleep(5);
 				if($innerpage)
 				{
