@@ -71,7 +71,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Tingkat_Proses	=	$Tingkat_Proses->next_sibling();
+						$Tingkat_Proses	=	$Tingkat_Proses->next_sibling()->plaintext;
 					}
 					
 					
@@ -83,7 +83,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Tanggal_Register	=	$Tanggal_Register->next_sibling();
+						$Tanggal_Register	=	$Tanggal_Register->next_sibling()->plaintext;
 					}
 					
 					
@@ -95,7 +95,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Tahun_Register	=	$Tahun_Register->next_sibling();
+						$Tahun_Register	=	$Tahun_Register->next_sibling()->plaintext;
 					}
 					
 					
@@ -107,7 +107,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Jenis_Perkara	=	$Jenis_Perkara->next_sibling();
+						$Jenis_Perkara	=	$Jenis_Perkara->next_sibling()->plaintext;
 					}
 					
 					
@@ -119,7 +119,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Klasifikasi	=	$Klasifikasi->next_sibling();
+						$Klasifikasi	=	$Klasifikasi->next_sibling()->plaintext;
 					}
 					
 							
@@ -131,7 +131,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Sub_Klasifikasi	=	$Sub_Klasifikasi->next_sibling();
+						$Sub_Klasifikasi	=	$Sub_Klasifikasi->next_sibling()->plaintext;
 					}
 					
 					//This is for Jenis Lembaga Peradilan
@@ -142,7 +142,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Jenis_Lembaga_Peradilan	=	$Jenis_Lembaga_Peradilan->next_sibling();
+						$Jenis_Lembaga_Peradilan	=	$Jenis_Lembaga_Peradilan->next_sibling()->plaintext;
 					}
 					
 					//This is for Lembaga Peradilan	
@@ -153,7 +153,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Lembaga_Peradilan	=	$Lembaga_Peradilan->next_sibling();
+						$Lembaga_Peradilan	=	$Lembaga_Peradilan->next_sibling()->plaintext;
 					}
 					
 					//This is for Para Pihak
@@ -164,7 +164,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Para_Pihak	=	$Para_Pihak->next_sibling();
+						$Para_Pihak	=	$Para_Pihak->next_sibling()->plaintext;
 					}
 					
 					//This is for Tahun
@@ -175,7 +175,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Tahun	=	$Tahun->next_sibling();
+						$Tahun	=	$Tahun->next_sibling()->plaintext;
 					}
 					
 					//This is for Tanggal Musyawarah
@@ -186,7 +186,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Tanggal_Musyawarah	=	$Tanggal_Musyawarah->next_sibling();
+						$Tanggal_Musyawarah	=	$Tanggal_Musyawarah->next_sibling()->plaintext;
 					}
 					//This is for Tanggal Dibacakan	
 					$Tanggal_Dibacakan			=	$innerpage->find("//td[plaintext^=Tanggal Dibacakan]", 0);
@@ -196,7 +196,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Tanggal_Dibacakan	=	$Tanggal_Dibacakan->next_sibling();
+						$Tanggal_Dibacakan	=	$Tanggal_Dibacakan->next_sibling()->plaintext;
 					}
 					
 					
@@ -208,7 +208,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Amar	=	$Amar->next_sibling();
+						$Amar	=	$Amar->next_sibling()->plaintext;
 					}
 					
 					//This is for Catatan Amar
@@ -219,7 +219,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Catatan_Amar	=	$Catatan_Amar->next_sibling();
+						$Catatan_Amar	=	$Catatan_Amar->next_sibling()->plaintext;
 					}
 					
 					//This is for Hakim
@@ -230,7 +230,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Hakim	=	$Hakim->next_sibling();
+						$Hakim	=	$Hakim->next_sibling()->plaintext;
 					}
 					
 					//This is for Hakim Ketua	
@@ -241,7 +241,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Hakim_Ketua	=	$Hakim_Ketua->next_sibling();
+						$Hakim_Ketua	=	$Hakim_Ketua->next_sibling()->plaintext;
 					}
 					
 					
@@ -253,7 +253,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Hakim_Anggota	=	$Hakim_Anggota->next_sibling();
+						$Hakim_Anggota	=	$Hakim_Anggota->next_sibling()->plaintext;
 					}
 					
 					//This is for Panitera
@@ -264,7 +264,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Panitera	=	$Panitera->next_sibling();
+						$Panitera	=	$Panitera->next_sibling()->plaintext;
 					}
 					
 					
@@ -276,7 +276,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$Berkekuatan_Hukum_Tetap	=	$Berkekuatan_Hukum_Tetap->next_sibling();
+						$Berkekuatan_Hukum_Tetap	=	$Berkekuatan_Hukum_Tetap->next_sibling()->plaintext;
 					}
 					
 					
