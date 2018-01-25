@@ -35,7 +35,7 @@ $cHeadres = array(
         }
        }
        
-for($page = 1; $page <3; $page++)
+for($page = 1; $page <2; $page++)
 {
     	$link	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
 	$pageload = dlPage($link);
@@ -45,8 +45,29 @@ for($page = 1; $page <3; $page++)
 		{								 
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				echo "$element->href \n";
-				//$innerpage	=	dlPage($element->href);
+				$innerpage	=	dlPage($element->href);
+					
+					sleep(5);
+				if($innerpage)
+				{
+					///This is for Nomor
+					$nomor			=	$innerpage->find("//td[plaintext^=Nomor]", 0);
+					if($nomor == null || $nomor == "")
+					{
+						$nomor	=	"Not Available";
+					}
+					else
+					{
+						$nomor	=	$nomor->next_sibling();
+					}
+					
+					
+					
+					$record = array( 'nomor' =>$nomor);
+						
+						
+          				 scraperwiki::save(array('nomor'), $record);
+				}
 		}	}	
 	}
 }
