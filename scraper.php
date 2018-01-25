@@ -320,7 +320,7 @@ for($page = 1; $page <2; $page++)
 		   'Hakim' => $Hakim,
 		   'Hakim_Ketua' => $Hakim_Ketua,
 		   'Hakim_Anggota' => $Hakim_Anggota,
-		   'Panitera' => $Panitera
+		   'Panitera' => $Panitera,
 		   'Berkekuatan_Hukum_Tetap' => $Berkekuatan_Hukum_Tetap,
 		   'profilelink' 		=>	$element->href);
 						
