@@ -303,29 +303,29 @@ for($page = 1; $page <2; $page++)
 					$Berkekuatan_Hukum_Tetap		=	urlencode($Berkekuatan_Hukum_Tetap); 
 							
 		$record = array( 'nomor' =>$nomor, 
-		   'Tingkat_Proses' => $Tingkat_Proses,
-		   'Tanggal_Register' => $Tanggal_Register, 
-		   'Tahun_Register' => $Tahun_Register, 
-		   'Jenis_Perkara' => $Jenis_Perkara, 
-		   'Klasifikasi' => $Klasifikasi, 
-		   'Sub_Klasifikasi' => $Sub_Klasifikasi, 
-		   'Jenis_Lembaga_Peradilan' => $Jenis_Lembaga_Peradilan, 
-		   'Lembaga_Peradilan' => $Lembaga_Peradilan, 
-		   'Para_Pihak' => $Para_Pihak,
-		   'Tahun' => $Tahun,
-		   'Tanggal_Musyawarah' => $Tanggal_Musyawarah,
-		   'Tanggal_Dibacakan' => $Tanggal_Dibacakan,
-		   'Amar' => $Amar,
-		   'Catatan_Amar' => $Catatan_Amar,
-		   'Hakim' => $Hakim,
-		   'Hakim_Ketua' => $Hakim_Ketua,
-		   'Hakim_Anggota' => $Hakim_Anggota,
-		   'Panitera' => $Panitera,
-		   'Berkekuatan_Hukum_Tetap' => $Berkekuatan_Hukum_Tetap,
+		   'tingkat_proses' => $Tingkat_Proses,
+		   'tanggal_register' => $Tanggal_Register, 
+		   'tahun_register' => $Tahun_Register, 
+		   'jenis_perkara' => $Jenis_Perkara, 
+		   'klasifikasi' => $Klasifikasi, 
+		   'sub_klasifikasi' => $Sub_Klasifikasi, 
+		   'jenis_lembaga_peradilan' => $Jenis_Lembaga_Peradilan, 
+		   'lembaga_peradilan' => $Lembaga_Peradilan, 
+		   'para_pihak' => $Para_Pihak,
+		   'tahun' => $Tahun,
+		   'tanggal_musyawarah' => $Tanggal_Musyawarah,
+		   'tanggal_dibacakan' => $Tanggal_Dibacakan,
+		   'amar' => $Amar,
+		   'catatan_amar' => $Catatan_Amar,
+		   'hakim' => $Hakim,
+		   'hakim_ketua' => $Hakim_Ketua,
+		   'hakim_anggota' => $Hakim_Anggota,
+		   'panitera' => $Panitera,
+		   'berkekuatan_hukum_tetap' => $Berkekuatan_Hukum_Tetap,
 		   'profilelink' 		=>	$element->href);
 						
 						
-           scraperwiki::save(array('nomor','Tingkat_Proses','Tanggal_Register','Tahun_Register','Jenis_Perkara','Klasifikasi','Sub_Klasifikasi','Jenis_Lembaga_Peradilan','Lembaga_Peradilan','Para_Pihak','Tahun','Tanggal_Musyawarah','Tanggal_Dibacakan','Amar','Catatan_Amar','Hakim','Hakim_Ketua','Hakim_Anggota','Panitera','Berkekuatan_Hukum_Tetap','profilelink'), $record);
+           scraperwiki::save(array('nomor','tingkat_proses','tanggal_register','tahun_register','jenis_perkara','klasifikasi','sub_klasifikasi','jenis_lembaga_peradilan','lembaga_peradilan','para_pihak','tahun','tanggal_musyawarah','tanggal_dibacakan','amar','catatan_amar','hakim','hakim_ketua','hakim_anggota','panitera','berkekuatan_hukum_tetap','profilelink'), $record);
 							
 					
 					
