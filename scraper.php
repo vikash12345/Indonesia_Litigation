@@ -58,7 +58,7 @@ for($page = 1; $page <2; $page++)
 					}
 					else
 					{
-						$nomor	=	$nomor->next_sibling();
+						$nomor	=	$nomor->next_sibling()->plaintext;
 					}
 					
 					
@@ -66,7 +66,7 @@ for($page = 1; $page <2; $page++)
 					$record = array( 'nomor' =>$nomor);
 						
 						
-          				 scraperwiki::save(array('nomor->plaintext'), $record);
+          				 scraperwiki::save(array('nomor'), $record);
 				}
 		}	}	
 	}
