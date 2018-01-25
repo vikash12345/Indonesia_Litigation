@@ -66,7 +66,7 @@ for($page = 1; $page <2; $page++)
 					$record = array( 'nomor' =>$nomor);
 						
 						
-          				 scraperwiki::save(array('nomor'), $record);
+          				 scraperwiki::save(array('nomor->plaintext'), $record);
 				}
 		}	}	
 	}
