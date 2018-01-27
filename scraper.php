@@ -40,15 +40,16 @@ for($page = 1; $page <49434; $page++)
     	$link	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
 	echo "$link\n";
 	$pageload = dlPage($link);
+	sleep(3);
 	if($pageload)
 	{
 	foreach($pageload->find("//table[@class='tabledata']/tbody/tr/a") as $element)
 		{								 
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
+				sleep(3);
 				$innerpage	=	dlPage($element->href);
-					
-					sleep(5);
+				sleep(5);
 				if($innerpage)
 				{
 					///This is for Nomor
