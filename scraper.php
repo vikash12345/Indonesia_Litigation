@@ -47,7 +47,6 @@ for($page = 1461; $page <49434; $page++)
 		{								 
 			if(strstr($element->href, "https://putusan.mahkamahagung.go.id/putusan"))
 			{
-				sleep(5);
 				$innerpage	=	dlPage($element->href);
 				sleep(7);
 				if($innerpage)
