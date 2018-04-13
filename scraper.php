@@ -35,7 +35,7 @@ $cHeadres = array(
         }
        }
        
-for($page = 6770; $page <49434; $page++)
+for($page = 6934; $page <49434; $page++)
 {
     	$link	=	'http://putusan.mahkamahagung.go.id/direktori/index-'.$page.'.html';
 	echo "$link\n";
